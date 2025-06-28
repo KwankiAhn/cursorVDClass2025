@@ -1,0 +1,7 @@
+/Users/browoo/Documents/cursorVD/cursor-cpp-training/02-cpp17-refactored/build/CMakeFiles/log_analyzer.dir
+/Users/browoo/Documents/cursorVD/cursor-cpp-training/02-cpp17-refactored/build/CMakeFiles/edit_cache.dir
+/Users/browoo/Documents/cursorVD/cursor-cpp-training/02-cpp17-refactored/build/CMakeFiles/rebuild_cache.dir
+/Users/browoo/Documents/cursorVD/cursor-cpp-training/02-cpp17-refactored/build/CMakeFiles/list_install_components.dir
+/Users/browoo/Documents/cursorVD/cursor-cpp-training/02-cpp17-refactored/build/CMakeFiles/install.dir
+/Users/browoo/Documents/cursorVD/cursor-cpp-training/02-cpp17-refactored/build/CMakeFiles/install/local.dir
+/Users/browoo/Documents/cursorVD/cursor-cpp-training/02-cpp17-refactored/build/CMakeFiles/install/strip.dir

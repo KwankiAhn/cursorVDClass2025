@@ -1,0 +1,69 @@
+---
+description:
+globs:
+alwaysApply: false
+---
+# LogAnalyzer Project Structure
+
+## Project Overview
+- **Name**: LogAnalyzer
+- **Purpose**: C++17 기반 로그 분석 도구
+- **Target Audience**: 삼성전자 VD사업부 개발자 교육
+- **Educational Focus**: Cursor AI 도구 활용 중심 학습
+
+## Main Features
+- 로그 파일 읽기 및 파싱
+- 로그 레벨별 필터링 (ERROR, WARNING, INFO, DEBUG)
+- 키워드 검색 기능
+- 통계 정보 생성 및 출력
+- JSON 출력 지원
+
+## Project Structure
+```
+cursor-cpp-training/
+├── 01-legacy-c/          # 레거시 C 코드 (리팩터링 전)
+├── 02-cpp17-refactored/  # C++17 리팩터링 버전
+├── 03-with-tests/        # 단위 테스트 포함 버전  
+├── 04-advanced/          # 고급 기능 확장 버전
+├── docs/                 # 문서 및 PlantUML 다이어그램
+├── sample-logs/          # 테스트용 로그 파일들
+└── README.md            # 프로젝트 가이드
+```
+
+## Core Classes
+- **LogFileReader**: 파일 읽기 및 검증 담당
+  - Reference: [LogFileReader.hpp](mdc:02-cpp17-refactored/LogFileReader.hpp)
+  - Implementation: [LogFileReader.cpp](mdc:02-cpp17-refactored/LogFileReader.cpp)
+
+- **LogParser**: 로그 파싱 및 필터링 담당
+  - Reference: [LogParser.hpp](mdc:02-cpp17-refactored/LogParser.hpp)
+  - Implementation: [LogParser.cpp](mdc:02-cpp17-refactored/LogParser.cpp)
+
+- **LogStats**: 통계 계산 및 출력 담당
+  - Reference: [LogStats.hpp](mdc:02-cpp17-refactored/LogStats.hpp)
+  - Implementation: [LogStats.cpp](mdc:02-cpp17-refactored/LogStats.cpp)
+
+## Build System
+- **CMake**: 현대적 빌드 시스템 사용
+- **Catch2**: 단위 테스트 프레임워크
+- **C++17**: 최소 요구 표준
+
+## Sample Usage
+```bash
+# Legacy C version
+cd 01-legacy-c/
+make
+./log_analyzer ../sample-logs/sample.log
+
+# C++17 refactored version
+cd 02-cpp17-refactored/
+mkdir build && cd build
+cmake ..
+make
+./log_analyzer ../../sample-logs/sample.log --detailed
+
+# With unit tests
+cd 03-with-tests/build/
+./log_analyzer_tests
+ctest
+```

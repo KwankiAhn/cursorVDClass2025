@@ -1,0 +1,5 @@
+if(EXISTS "/Users/browoo/Documents/cursorVD/cursor-cpp-training/03-with-tests/build/log_analyzer_tests_tests-b12d07c.cmake")
+  include("/Users/browoo/Documents/cursorVD/cursor-cpp-training/03-with-tests/build/log_analyzer_tests_tests-b12d07c.cmake")
+else()
+  add_test(log_analyzer_tests_NOT_BUILT-b12d07c log_analyzer_tests_NOT_BUILT-b12d07c)
+endif()

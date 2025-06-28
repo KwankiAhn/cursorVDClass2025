@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>로그 분석 대시보드</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+      body {
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+          Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+        background-color: #f4f7f9;
+        color: #333;
+        margin: 0;
+        padding: 20px;
+      }
+      .container {
+        max-width: 1000px;
+        margin: 0 auto;
+        background-color: #fff;
+        padding: 20px 40px;
+        border-radius: 8px;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+      }
+      h1 {
+        color: #1a2b4d;
+        border-bottom: 2px solid #e2e8f0;
+        padding-bottom: 10px;
+        margin-top: 0;
+      }
+      .chart-container {
+        position: relative;
+        height: 40vh;
+        width: 100%;
+        margin-top: 30px;
+      }
+      table {
+        width: 100%;
+        border-collapse: collapse;
+        margin-top: 30px;
+      }
+      th,
+      td {
+        text-align: left;
+        padding: 12px;
+        border-bottom: 1px solid #e2e8f0;
+      }
+      th {
+        background-color: #f8fafc;
+        font-weight: 600;
+      }
+      tr:hover {
+        background-color: #f1f5f9;
+      }
+      .file-info {
+        font-size: 0.9em;
+        color: #64748b;
+        margin-bottom: 20px;
+      }
+      .file-info span {
+        font-weight: 600;
+        color: #334155;
+      }
+      .log-list {
+        margin-top: 30px;
+      }
+      .log-entry {
+        padding: 10px;
+        border-bottom: 1px solid #eee;
+        font-family: "SF Mono", "Courier New", monospace;
+        font-size: 14px;
+        display: flex;
+        align-items: center;
+      }
+      .log-entry:last-child {
+        border-bottom: none;
+      }
+      .log-level {
+        padding: 3px 8px;
+        border-radius: 4px;
+        color: #fff;
+        font-weight: bold;
+        margin-right: 15px;
+        text-align: center;
+        min-width: 60px;
+      }
+      .log-level-INFO {
+        background-color: #2a9d8f;
+      }
+      .log-level-WARNING {
+        background-color: #e9c46a;
+        color: #554400;
+      }
+      .log-level-ERROR {
+        background-color: #e76f51;
+      }
+      .log-level-DEBUG {
+        background-color: #8390fa;
+      }
+      .log-controls {
+        display: flex;
+        gap: 15px;
+        margin-bottom: 15px;
+        align-items: center;
+      }
+      .log-controls select,
+      .log-controls input {
+        padding: 8px;
+        border-radius: 5px;
+        border: 1px solid #ccc;
+        font-size: 14px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h1>📊 로그 분석 대시보드</h1>
+      <div id="file-info" class="file-info"></div>
+      <div class="chart-container">
+        <canvas id="logChart"></canvas>
+      </div>
+      <h2>상세 정보</h2>
+      <table id="logTable">
+        <thead>
+          <tr>
+            <th>로그 레벨</th>
+            <th>개수</th>
+            <th>비율 (%)</th>
+          </tr>
+        </thead>
+        <tbody>
+          <!-- 데이터가 여기에 동적으로 삽입됩니다. -->
+        </tbody>
+      </table>
+
+      <div class="log-list">
+        <h2>📜 로그 목록</h2>
+        <div class="log-controls">
+          <label for="levelFilter">레벨 필터:</label>
+          <select id="levelFilter">
+            <option value="ALL">전체</option>
+            <option value="ERROR">ERROR</option>
+            <option value="WARNING">WARNING</option>
+            <option value="INFO">INFO</option>
+            <option value="DEBUG">DEBUG</option>
+          </select>
+          <label for="keywordSearch">키워드 검색:</label>
+          <input
+            type="text"
+            id="keywordSearch"
+            placeholder="메시지 내용 검색..."
+          />
+        </div>
+        <div id="logEntries"></div>
+      </div>
+    </div>
+
+    <script>
+      let allLogs = [];
+
+      async function loadDashboard() {
+        try {
+          const response = await fetch("./results.json");
+          if (!response.ok) {
+            throw new Error(`HTTP error! status: ${response.status}`);
+          }
+          const data = await response.json();
+
+          // 파일 정보 업데이트
+          const fileInfoDiv = document.getElementById("file-info");
+          fileInfoDiv.innerHTML = `
+                    <p><strong>파일 경로:</strong> <span>${
+                      data.filePath
+                    }</span></p>
+                    <p><strong>파일 크기:</strong> <span>${(
+                      data.fileSize / 1024
+                    ).toFixed(2)} KB</span></p>
+                    <p><strong>전체 라인:</strong> <span>${
+                      data.totalLines
+                    }</span></p>
+                `;
+
+          const levelCounts = data.levelCounts || {};
+          const labels = Object.keys(levelCounts);
+          const counts = Object.values(levelCounts);
+
+          // 테이블 업데이트
+          const tableBody = document.querySelector("#logTable tbody");
+          tableBody.innerHTML = ""; // 기존 내용 초기화
+          const total = data.totalLines > 0 ? data.totalLines : 1;
+
+          labels.forEach((label) => {
+            const count = levelCounts[label];
+            const percentage = ((count / total) * 100).toFixed(2);
+            const row = `<tr>
+                                    <td>${label}</td>
+                                    <td>${count}</td>
+                                    <td>${percentage}%</td>
+                                 </tr>`;
+            tableBody.innerHTML += row;
+          });
+
+          // 차트 생성
+          const ctx = document.getElementById("logChart").getContext("2d");
+          new Chart(ctx, {
+            type: "bar",
+            data: {
+              labels: labels,
+              datasets: [
+                {
+                  label: "로그 개수",
+                  data: counts,
+                  backgroundColor: [
+                    "rgba(255, 99, 132, 0.7)",
+                    "rgba(255, 206, 86, 0.7)",
+                    "rgba(75, 192, 192, 0.7)",
+                    "rgba(54, 162, 235, 0.7)",
+                    "rgba(153, 102, 255, 0.7)",
+                  ],
+                  borderColor: [
+                    "rgba(255, 99, 132, 1)",
+                    "rgba(255, 206, 86, 1)",
+                    "rgba(75, 192, 192, 1)",
+                    "rgba(54, 162, 235, 1)",
+                    "rgba(153, 102, 255, 1)",
+                  ],
+                  borderWidth: 1,
+                },
+              ],
+            },
+            options: {
+              maintainAspectRatio: false,
+              scales: {
+                y: {
+                  beginAtZero: true,
+                  ticks: {
+                    stepSize: 1,
+                  },
+                },
+              },
+              plugins: {
+                legend: {
+                  display: false,
+                },
+              },
+            },
+          });
+
+          allLogs = data.logs || [];
+          renderLogs(allLogs);
+
+          document
+            .getElementById("levelFilter")
+            .addEventListener("change", applyFilters);
+          document
+            .getElementById("keywordSearch")
+            .addEventListener("input", applyFilters);
+        } catch (error) {
+          console.error("대시보드 데이터를 불러오는 데 실패했습니다:", error);
+          document.querySelector(".container").innerHTML =
+            "<h1>오류</h1><p>results.json 파일을 불러올 수 없습니다. C++ 프로그램을 먼저 실행했는지 확인해주세요.</p>";
+        }
+      }
+
+      function renderLogs(logs) {
+        const container = document.getElementById("logEntries");
+        if (!logs || logs.length === 0) {
+          container.innerHTML = "<p>표시할 로그가 없습니다.</p>";
+          return;
+        }
+
+        const fragment = document.createDocumentFragment();
+        logs.forEach((log) => {
+          const entryDiv = document.createElement("div");
+          entryDiv.className = "log-entry";
+
+          const levelSpan = document.createElement("span");
+          levelSpan.className = `log-level log-level-${log.level}`;
+          levelSpan.textContent = log.level;
+
+          const messageSpan = document.createElement("span");
+          messageSpan.textContent = log.message;
+
+          entryDiv.appendChild(levelSpan);
+          entryDiv.appendChild(messageSpan);
+          fragment.appendChild(entryDiv);
+        });
+        container.innerHTML = ""; // Clear previous logs
+        container.appendChild(fragment);
+      }
+
+      function applyFilters() {
+        const levelFilter = document.getElementById("levelFilter").value;
+        const keywordFilter = document
+          .getElementById("keywordSearch")
+          .value.toLowerCase();
+
+        let filteredLogs = allLogs;
+
+        if (levelFilter !== "ALL") {
+          filteredLogs = filteredLogs.filter(
+            (log) => log.level === levelFilter
+          );
+        }
+
+        if (keywordFilter) {
+          filteredLogs = filteredLogs.filter((log) =>
+            log.message.toLowerCase().includes(keywordFilter)
+          );
+        }
+
+        renderLogs(filteredLogs);
+      }
+
+      window.onload = loadDashboard;
+    </script>
+  </body>
+</html>

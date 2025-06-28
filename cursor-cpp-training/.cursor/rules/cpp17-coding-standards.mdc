@@ -1,0 +1,33 @@
+---
+description:
+globs:
+alwaysApply: false
+---
+# C++17 Coding Standards for LogAnalyzer Project
+
+## Language Standards
+- **C++17 표준을 엄격히 준수하세요**
+- RAII(Resource Acquisition Is Initialization) 패턴을 적용하세요
+- 스마트 포인터(std::unique_ptr, std::shared_ptr)를 사용하세요
+- 예외 처리를 포함하되 noexcept 지정자를 적절히 사용하세요
+- const correctness를 지키세요 (const 메서드, const 매개변수)
+
+## STL and Modern C++ Features
+- STL 컨테이너와 알고리즘을 적극 활용하세요
+- 범위 기반 for 루프(range-based for)를 사용하세요
+- auto 키워드를 적절히 사용하되 타입이 명확할 때만 사용하세요
+- std::optional을 사용하여 null 값을 안전하게 처리하세요
+- std::filesystem을 사용하여 파일 시스템 작업을 수행하세요
+- 람다 표현식을 적절히 활용하세요
+- 성능이 중요한 부분에서는 move semantics를 활용하세요
+
+## Code Organization
+- 네임스페이스를 사용하여 코드를 구조화하세요
+- 클래스 설계 시 단일 책임 원칙(SRP)을 따르세요
+- 헤더 파일에는 선언만, 구현 파일에는 정의를 분리하세요
+- 인클루드 가드 대신 #pragma once를 사용하세요
+- 메모리 누수를 방지하기 위해 스택 기반 객체를 선호하세요
+
+## Memory Management
+- 복사 생성자와 이동 생성자를 명시적으로 관리하세요
+- 템플릿 사용 시 SFINAE나 concepts(C++20)를 고려하세요

@@ -1,0 +1,73 @@
+---
+description:
+globs:
+alwaysApply: false
+---
+# Testing Guidelines with Catch2
+
+## Testing Framework
+- **Catch2 테스트 프레임워크를 사용하여 단위 테스트를 작성하세요**
+- CMake를 사용하여 빌드 시스템을 구성하세요
+- CTest 통합을 통한 자동화된 테스트 실행
+
+## Test Writing Standards
+- **모든 public 메서드에 대해 단위 테스트를 작성하세요**
+- 경계값 테스트를 포함하세요 (빈 문자열, null, 최대값 등)
+- 예외 상황에 대한 테스트를 작성하세요
+- 테스트는 독립적이고 반복 가능해야 합니다
+- **테스트 이름은 한글로 작성하여 이해하기 쉽게 하세요**
+
+## Test Structure Example
+```cpp
+#include <catch2/catch_test_macros.hpp>
+#include "../LogParser.hpp"
+
+TEST_CASE("LogParser 기본 기능 테스트", "[LogParser]") {
+    LogParser parser;
+    
+    SECTION("ERROR 레벨 감지") {
+        std::string errorLine = "2023-12-01 10:30:15 ERROR Database connection failed";
+        auto entry = parser.parseLine(errorLine);
+        REQUIRE(entry.level == LogLevel::ERROR);
+    }
+    
+    SECTION("빈 라인 처리") {
+        std::string emptyLine = "";
+        auto entry = parser.parseLine(emptyLine);
+        REQUIRE(entry.level == LogLevel::UNKNOWN);
+    }
+}
+```
+
+## Test Organization
+- Test files location: [tests/](mdc:03-with-tests/tests/)
+- Test naming convention: `test_[class_name].cpp`
+- Main test file: [test_main.cpp](mdc:03-with-tests/tests/test_main.cpp)
+
+## Test Categories
+- **Unit Tests**: Individual class/method testing
+  - [LogFileReader Tests](mdc:03-with-tests/tests/test_log_file_reader.cpp)
+  - [LogParser Tests](mdc:03-with-tests/tests/test_log_parser.cpp)
+  - [LogStats Tests](mdc:03-with-tests/tests/test_log_stats.cpp)
+
+## Running Tests
+```bash
+# Build and run all tests
+cd 03-with-tests/
+mkdir build && cd build
+cmake ..
+make
+./log_analyzer_tests
+
+# Run with CTest
+ctest --verbose
+
+# Run specific test categories
+./log_analyzer_tests "[LogParser]"
+```
+
+## Test Coverage Goals
+- All public methods should have tests
+- Edge cases and error conditions
+- Integration between classes
+- Performance benchmarks (optional)

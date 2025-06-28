@@ -1,0 +1,50 @@
+---
+description:
+globs:
+alwaysApply: false
+---
+# Naming Conventions
+
+## Code Style Guidelines
+- **Indentation**: 4 spaces (no tabs)
+- **Bracket Style**: Allman style (opening brace on new line)
+- **Encoding**: 한글 주석과 문자열은 UTF-8 인코딩을 사용하세요
+
+## Naming Rules
+- **Variables**: camelCase를 사용하세요
+  ```cpp
+  int logCount = 0;
+  std::string fileName = "sample.log";
+  ```
+
+- **Functions**: camelCase를 사용하세요
+  ```cpp
+  void parseLogLine();
+  bool isValidFile();
+  ```
+
+- **Classes**: PascalCase를 사용하세요
+  ```cpp
+  class LogFileReader;
+  class LogParser;
+  ```
+
+- **Constants**: UPPER_SNAKE_CASE를 사용하세요
+  ```cpp
+  const int MAX_LINE_LENGTH = 1024;
+  const std::string DEFAULT_LOG_LEVEL = "INFO";
+  ```
+
+- **Private Member Variables**: camelCase with trailing underscore(_)를 사용하세요
+  ```cpp
+  class LogParser {
+  private:
+      std::string filePath_;
+      bool isValid_;
+  };
+  ```
+
+## File Organization
+- Header files (.hpp): 클래스 선언과 인라인 함수만
+- Implementation files (.cpp): 함수 정의와 구현
+- Test files: test_[class_name].cpp 형식으로 명명

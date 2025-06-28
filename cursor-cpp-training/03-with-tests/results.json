@@ -1,0 +1,270 @@
+{
+  "filePath": "../../sample-logs/sample.log",
+  "fileSize": 3477,
+  "totalLines": 51,
+  "analysisTime": "2025-06-28 18:10:55",
+  "levelCounts": {
+    "UNKNOWN": 0,
+    "ERROR": 7,
+    "WARNING": 10,
+    "INFO": 34,
+    "DEBUG": 0
+  },
+  "logs": [
+    {
+      "timestamp": "2023-12-01 09:00:00",
+      "level": "INFO",
+      "message": "2023-12-01 09:00:00 INFO Application started successfully"
+    },
+    {
+      "timestamp": "2023-12-01 09:00:01",
+      "level": "INFO",
+      "message": "2023-12-01 09:00:01 INFO Loading configuration from /etc/app/config.xml"
+    },
+    {
+      "timestamp": "2023-12-01 09:00:02",
+      "level": "INFO",
+      "message": "2023-12-01 09:00:02 INFO Database connection pool initialized with 10 connections"
+    },
+    {
+      "timestamp": "2023-12-01 09:00:03",
+      "level": "INFO",
+      "message": "2023-12-01 09:00:03 INFO Web server listening on port 8080"
+    },
+    {
+      "timestamp": "2023-12-01 09:00:10",
+      "level": "INFO",
+      "message": "2023-12-01 09:00:10 INFO User authentication module loaded"
+    },
+    {
+      "timestamp": "2023-12-01 09:00:15",
+      "level": "WARNING",
+      "message": "2023-12-01 09:00:15 WARN Configuration file permission is too open (644)"
+    },
+    {
+      "timestamp": "2023-12-01 09:00:20",
+      "level": "INFO",
+      "message": "2023-12-01 09:00:20 INFO First user login: admin@company.com"
+    },
+    {
+      "timestamp": "2023-12-01 09:00:25",
+      "level": "INFO",
+      "message": "2023-12-01 09:00:25 INFO Processing user request: GET /api/users"
+    },
+    {
+      "timestamp": "2023-12-01 09:00:30",
+      "level": "ERROR",
+      "message": "2023-12-01 09:00:30 ERROR Database connection timeout after 30 seconds"
+    },
+    {
+      "timestamp": "2023-12-01 09:00:31",
+      "level": "WARNING",
+      "message": "2023-12-01 09:00:31 WARN Retrying database connection (attempt 1/3)"
+    },
+    {
+      "timestamp": "2023-12-01 09:00:35",
+      "level": "INFO",
+      "message": "2023-12-01 09:00:35 INFO Database connection restored"
+    },
+    {
+      "timestamp": "2023-12-01 09:00:40",
+      "level": "INFO",
+      "message": "2023-12-01 09:00:40 INFO Processing user request: POST /api/login"
+    },
+    {
+      "timestamp": "2023-12-01 09:00:45",
+      "level": "ERROR",
+      "message": "2023-12-01 09:00:45 ERROR Invalid credentials for user: hacker@evil.com"
+    },
+    {
+      "timestamp": "2023-12-01 09:00:46",
+      "level": "WARNING",
+      "message": "2023-12-01 09:00:46 WARN Security alert: Multiple failed login attempts from IP 192.168.1.100"
+    },
+    {
+      "timestamp": "2023-12-01 09:00:50",
+      "level": "INFO",
+      "message": "2023-12-01 09:00:50 INFO User logout: admin@company.com"
+    },
+    {
+      "timestamp": "2023-12-01 09:01:00",
+      "level": "INFO",
+      "message": "2023-12-01 09:01:00 INFO Processing user request: GET /api/dashboard"
+    },
+    {
+      "timestamp": "2023-12-01 09:01:05",
+      "level": "WARNING",
+      "message": "2023-12-01 09:01:05 WARN Memory usage high: 85% of 8GB used"
+    },
+    {
+      "timestamp": "2023-12-01 09:01:10",
+      "level": "INFO",
+      "message": "2023-12-01 09:01:10 INFO Garbage collection completed in 150ms"
+    },
+    {
+      "timestamp": "2023-12-01 09:01:15",
+      "level": "ERROR",
+      "message": "2023-12-01 09:01:15 ERROR Failed to send email notification to admin@company.com"
+    },
+    {
+      "timestamp": "2023-12-01 09:01:16",
+      "level": "INFO",
+      "message": "2023-12-01 09:01:16 INFO Email service fallback activated"
+    },
+    {
+      "timestamp": "2023-12-01 09:01:20",
+      "level": "INFO",
+      "message": "2023-12-01 09:01:20 INFO Processing user request: GET /api/reports"
+    },
+    {
+      "timestamp": "2023-12-01 09:01:25",
+      "level": "INFO",
+      "message": "2023-12-01 09:01:25 INFO Report generation started for period 2023-11-01 to 2023-11-30"
+    },
+    {
+      "timestamp": "2023-12-01 09:01:30",
+      "level": "WARNING",
+      "message": "2023-12-01 09:01:30 WARN Report generation taking longer than expected (>5 seconds)"
+    },
+    {
+      "timestamp": "2023-12-01 09:01:35",
+      "level": "INFO",
+      "message": "2023-12-01 09:01:35 INFO Report generation completed successfully"
+    },
+    {
+      "timestamp": "2023-12-01 09:01:40",
+      "level": "ERROR",
+      "message": "2023-12-01 09:01:40 ERROR Disk space low: only 500MB remaining on /var/log"
+    },
+    {
+      "timestamp": "2023-12-01 09:01:41",
+      "level": "WARNING",
+      "message": "2023-12-01 09:01:41 WARN Log rotation triggered due to disk space"
+    },
+    {
+      "timestamp": "2023-12-01 09:01:45",
+      "level": "INFO",
+      "message": "2023-12-01 09:01:45 INFO Old log files compressed and archived"
+    },
+    {
+      "timestamp": "2023-12-01 09:01:50",
+      "level": "INFO",
+      "message": "2023-12-01 09:01:50 INFO System health check: CPU 45%, Memory 75%, Disk 92%"
+    },
+    {
+      "timestamp": "2023-12-01 09:02:00",
+      "level": "INFO",
+      "message": "2023-12-01 09:02:00 INFO Scheduled backup started"
+    },
+    {
+      "timestamp": "2023-12-01 09:02:30",
+      "level": "ERROR",
+      "message": "2023-12-01 09:02:30 ERROR Backup failed: Network connection lost"
+    },
+    {
+      "timestamp": "2023-12-01 09:02:31",
+      "level": "WARNING",
+      "message": "2023-12-01 09:02:31 WARN Backup will retry in 5 minutes"
+    },
+    {
+      "timestamp": "2023-12-01 09:02:35",
+      "level": "INFO",
+      "message": "2023-12-01 09:02:35 INFO Processing user request: DELETE /api/users/123"
+    },
+    {
+      "timestamp": "2023-12-01 09:02:40",
+      "level": "INFO",
+      "message": "2023-12-01 09:02:40 INFO User account deleted successfully: testuser@company.com"
+    },
+    {
+      "timestamp": "2023-12-01 09:02:45",
+      "level": "INFO",
+      "message": "2023-12-01 09:02:45 INFO Database cleanup completed"
+    },
+    {
+      "timestamp": "2023-12-01 09:03:00",
+      "level": "INFO",
+      "message": "2023-12-01 09:03:00 INFO System monitoring: All services running normally"
+    },
+    {
+      "timestamp": "2023-12-01 09:03:15",
+      "level": "ERROR",
+      "message": "2023-12-01 09:03:15 ERROR SSL certificate expires in 7 days"
+    },
+    {
+      "timestamp": "2023-12-01 09:03:16",
+      "level": "WARNING",
+      "message": "2023-12-01 09:03:16 WARN SSL certificate renewal required"
+    },
+    {
+      "timestamp": "2023-12-01 09:03:20",
+      "level": "INFO",
+      "message": "2023-12-01 09:03:20 INFO Processing user request: PUT /api/settings"
+    },
+    {
+      "timestamp": "2023-12-01 09:03:25",
+      "level": "INFO",
+      "message": "2023-12-01 09:03:25 INFO Application settings updated by admin@company.com"
+    },
+    {
+      "timestamp": "2023-12-01 09:03:30",
+      "level": "INFO",
+      "message": "2023-12-01 09:03:30 INFO Configuration reloaded successfully"
+    },
+    {
+      "timestamp": "2023-12-01 09:03:35",
+      "level": "WARNING",
+      "message": "2023-12-01 09:03:35 WARN Cache invalidated due to configuration change"
+    },
+    {
+      "timestamp": "2023-12-01 09:03:40",
+      "level": "INFO",
+      "message": "2023-12-01 09:03:40 INFO Cache rebuilt with new configuration"
+    },
+    {
+      "timestamp": "2023-12-01 09:04:00",
+      "level": "INFO",
+      "message": "2023-12-01 09:04:00 INFO Hourly maintenance task started"
+    },
+    {
+      "timestamp": "2023-12-01 09:04:05",
+      "level": "INFO",
+      "message": "2023-12-01 09:04:05 INFO Database optimization in progress"
+    },
+    {
+      "timestamp": "2023-12-01 09:04:10",
+      "level": "ERROR",
+      "message": "2023-12-01 09:04:10 ERROR Database optimization failed: Table lock timeout"
+    },
+    {
+      "timestamp": "2023-12-01 09:04:11",
+      "level": "WARNING",
+      "message": "2023-12-01 09:04:11 WARN Database optimization will retry during next maintenance window"
+    },
+    {
+      "timestamp": "2023-12-01 09:04:15",
+      "level": "INFO",
+      "message": "2023-12-01 09:04:15 INFO Session cleanup completed: 15 expired sessions removed"
+    },
+    {
+      "timestamp": "2023-12-01 09:04:20",
+      "level": "INFO",
+      "message": "2023-12-01 09:04:20 INFO Temporary files cleanup completed: 250MB freed"
+    },
+    {
+      "timestamp": "2023-12-01 09:04:25",
+      "level": "INFO",
+      "message": "2023-12-01 09:04:25 INFO Security scan completed: No vulnerabilities found"
+    },
+    {
+      "timestamp": "2023-12-01 09:04:30",
+      "level": "INFO",
+      "message": "2023-12-01 09:04:30 INFO Performance metrics collected and stored"
+    },
+    {
+      "timestamp": "2023-12-01 09:05:00",
+      "level": "INFO",
+      "message": "2023-12-01 09:05:00 INFO Application running smoothly - End of sample log "
+    }
+  ]
+}

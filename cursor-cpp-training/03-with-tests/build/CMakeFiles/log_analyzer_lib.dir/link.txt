@@ -1,0 +1,2 @@
+/usr/bin/ar qc liblog_analyzer_lib.a CMakeFiles/log_analyzer_lib.dir/LogFileReader.cpp.o CMakeFiles/log_analyzer_lib.dir/LogParser.cpp.o CMakeFiles/log_analyzer_lib.dir/LogStats.cpp.o
+/usr/bin/ranlib liblog_analyzer_lib.a
