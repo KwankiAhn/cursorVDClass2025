@@ -1,0 +1,2 @@
+/usr/bin/ar qc libLogAnalyzerLib.a CMakeFiles/LogAnalyzerLib.dir/LogFileReader.cpp.o CMakeFiles/LogAnalyzerLib.dir/LogParser.cpp.o CMakeFiles/LogAnalyzerLib.dir/LogStats.cpp.o
+/usr/bin/ranlib libLogAnalyzerLib.a

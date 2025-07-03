@@ -1,0 +1,22 @@
+Start testing: Jul 03 13:55 KST
+----------------------------------------------------------
+1/1 Testing: LogAnalyzerTests
+1/1 Test: LogAnalyzerTests
+Command: "/Users/browoo/Documents/cursorVD/cursor-cpp-training/01-legacy-c/build/bin/log_analyzer_tests"
+Directory: /Users/browoo/Documents/cursorVD/cursor-cpp-training/01-legacy-c/build
+"LogAnalyzerTests" start time: Jul 03 13:55 KST
+Output:
+----------------------------------------------------------
+Randomness seeded to: 353770925
+===============================================================================
+All tests passed (158 assertions in 16 test cases)
+
+<end of output>
+Test time =   0.01 sec
+----------------------------------------------------------
+Test Passed.
+"LogAnalyzerTests" end time: Jul 03 13:55 KST
+"LogAnalyzerTests" time elapsed: 00:00:00
+----------------------------------------------------------
+
+End testing: Jul 03 13:55 KST

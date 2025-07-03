@@ -101,3 +101,36 @@
 ---
 
 **🎉 최종 목표**: 8시간 후 수강생들이 자신만의 AI 협업 워크플로우를 가지고 실무에 바로 적용할 수 있도록!
+
+graph TD
+    A["C++ 로그 분석 프로젝트<br/>(/01-legacy-c)"] --> B["빌드 시스템"]
+    A --> C["소스 코드"]
+    A --> D["테스트 데이터"]
+    
+    B --> B1["CMakeLists.txt<br/>- C++17 표준<br/>- 크로스 플랫폼<br/>- 컴파일러 설정"]
+    
+    C --> C1["LogFileReader.hpp<br/>- 클래스 선언<br/>- 공개 인터페이스<br/>- 문서화"]
+    C --> C2["LogFileReader.cpp<br/>- 구현 코드<br/>- 파일 I/O<br/>- 에러 처리"]
+    C --> C3["main.cpp<br/>- 프로그램 진입점<br/>- 사용자 인터페이스<br/>- 예외 처리"]
+    
+    D --> D1["../sample-logs/<br/>- sample.log<br/>- 테스트 데이터"]
+    
+    E["빌드 과정"] --> E1["mkdir build"]
+    E1 --> E2["cmake .."]
+    E2 --> E3["make"]
+    E3 --> E4["./bin/LogAnalyzer"]
+    
+    F["LogFileReader 클래스<br/>주요 기능"] --> F1["파일 검증<br/>- isValid()<br/>- validateFile()"]
+    F --> F2["파일 열기/닫기<br/>- open()<br/>- close()"]
+    F --> F3["라인 읽기<br/>- readLine()<br/>- readAllLines()"]
+    F --> F4["파일 정보<br/>- getFileSize()<br/>- getCurrentLineNumber()"]
+    
+    G["C++17 특징"] --> G1["std::filesystem<br/>파일 시스템 API"]
+    G --> G2["std::optional<br/>안전한 반환값"]
+    G --> G3["RAII 패턴<br/>자동 리소스 관리"]
+    G --> G4["move semantics<br/>성능 최적화"]
+    
+    style A fill:#e1f5fe
+    style C fill:#f3e5f5
+    style F fill:#e8f5e8
+    style G fill:#fff3e0
