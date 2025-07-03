@@ -1,0 +1,16 @@
+/Users/ahnkwanki/src-github/cursorVDClaas2025/cursor-cpp-training/01-legacy-c/build/CMakeFiles/LogAnalyzer.dir
+/Users/ahnkwanki/src-github/cursorVDClaas2025/cursor-cpp-training/01-legacy-c/build/CMakeFiles/log_analyzer.dir
+/Users/ahnkwanki/src-github/cursorVDClaas2025/cursor-cpp-training/01-legacy-c/build/CMakeFiles/log_analyzer_live.dir
+/Users/ahnkwanki/src-github/cursorVDClaas2025/cursor-cpp-training/01-legacy-c/build/CMakeFiles/simple_log_monitor.dir
+/Users/ahnkwanki/src-github/cursorVDClaas2025/cursor-cpp-training/01-legacy-c/build/CMakeFiles/log_analyzer_tests.dir
+/Users/ahnkwanki/src-github/cursorVDClaas2025/cursor-cpp-training/01-legacy-c/build/CMakeFiles/test.dir
+/Users/ahnkwanki/src-github/cursorVDClaas2025/cursor-cpp-training/01-legacy-c/build/CMakeFiles/edit_cache.dir
+/Users/ahnkwanki/src-github/cursorVDClaas2025/cursor-cpp-training/01-legacy-c/build/CMakeFiles/rebuild_cache.dir
+/Users/ahnkwanki/src-github/cursorVDClaas2025/cursor-cpp-training/01-legacy-c/build/_deps/catch2-build/CMakeFiles/test.dir
+/Users/ahnkwanki/src-github/cursorVDClaas2025/cursor-cpp-training/01-legacy-c/build/_deps/catch2-build/CMakeFiles/edit_cache.dir
+/Users/ahnkwanki/src-github/cursorVDClaas2025/cursor-cpp-training/01-legacy-c/build/_deps/catch2-build/CMakeFiles/rebuild_cache.dir
+/Users/ahnkwanki/src-github/cursorVDClaas2025/cursor-cpp-training/01-legacy-c/build/_deps/catch2-build/src/CMakeFiles/Catch2.dir
+/Users/ahnkwanki/src-github/cursorVDClaas2025/cursor-cpp-training/01-legacy-c/build/_deps/catch2-build/src/CMakeFiles/Catch2WithMain.dir
+/Users/ahnkwanki/src-github/cursorVDClaas2025/cursor-cpp-training/01-legacy-c/build/_deps/catch2-build/src/CMakeFiles/test.dir
+/Users/ahnkwanki/src-github/cursorVDClaas2025/cursor-cpp-training/01-legacy-c/build/_deps/catch2-build/src/CMakeFiles/edit_cache.dir
+/Users/ahnkwanki/src-github/cursorVDClaas2025/cursor-cpp-training/01-legacy-c/build/_deps/catch2-build/src/CMakeFiles/rebuild_cache.dir

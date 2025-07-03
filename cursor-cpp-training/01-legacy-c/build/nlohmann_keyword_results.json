@@ -1,0 +1,112 @@
+{
+    "errorEntries": [
+        {
+            "level": "ERROR",
+            "message": "Database connection timeout after 30 seconds",
+            "rawLine": "2023-12-01 09:00:30 ERROR Database connection timeout after 30 seconds",
+            "timestamp": "2023-12-01 09:00:30"
+        },
+        {
+            "level": "ERROR",
+            "message": "Invalid credentials for user: hacker@evil.com",
+            "rawLine": "2023-12-01 09:00:45 ERROR Invalid credentials for user: hacker@evil.com",
+            "timestamp": "2023-12-01 09:00:45"
+        },
+        {
+            "level": "ERROR",
+            "message": "Failed to send email notification to admin@company.com",
+            "rawLine": "2023-12-01 09:01:15 ERROR Failed to send email notification to admin@company.com",
+            "timestamp": "2023-12-01 09:01:15"
+        },
+        {
+            "level": "ERROR",
+            "message": "Disk space low: only 500MB remaining on /var/log",
+            "rawLine": "2023-12-01 09:01:40 ERROR Disk space low: only 500MB remaining on /var/log",
+            "timestamp": "2023-12-01 09:01:40"
+        },
+        {
+            "level": "ERROR",
+            "message": "Backup failed: Network connection lost",
+            "rawLine": "2023-12-01 09:02:30 ERROR Backup failed: Network connection lost",
+            "timestamp": "2023-12-01 09:02:30"
+        },
+        {
+            "level": "ERROR",
+            "message": "SSL certificate expires in 7 days",
+            "rawLine": "2023-12-01 09:03:15 ERROR SSL certificate expires in 7 days",
+            "timestamp": "2023-12-01 09:03:15"
+        },
+        {
+            "level": "ERROR",
+            "message": "Database optimization failed: Table lock timeout",
+            "rawLine": "2023-12-01 09:04:10 ERROR Database optimization failed: Table lock timeout",
+            "timestamp": "2023-12-01 09:04:10"
+        }
+    ],
+    "keywordCounts": {
+        "Database": 7
+    },
+    "keywordMatches": [
+        {
+            "level": "INFO",
+            "message": "Database connection pool initialized with 10 connections",
+            "rawLine": "2023-12-01 09:00:02 INFO Database connection pool initialized with 10 connections",
+            "timestamp": "2023-12-01 09:00:02"
+        },
+        {
+            "level": "ERROR",
+            "message": "Database connection timeout after 30 seconds",
+            "rawLine": "2023-12-01 09:00:30 ERROR Database connection timeout after 30 seconds",
+            "timestamp": "2023-12-01 09:00:30"
+        },
+        {
+            "level": "INFO",
+            "message": "Database connection restored",
+            "rawLine": "2023-12-01 09:00:35 INFO Database connection restored",
+            "timestamp": "2023-12-01 09:00:35"
+        },
+        {
+            "level": "INFO",
+            "message": "Database cleanup completed",
+            "rawLine": "2023-12-01 09:02:45 INFO Database cleanup completed",
+            "timestamp": "2023-12-01 09:02:45"
+        },
+        {
+            "level": "INFO",
+            "message": "Database optimization in progress",
+            "rawLine": "2023-12-01 09:04:05 INFO Database optimization in progress",
+            "timestamp": "2023-12-01 09:04:05"
+        },
+        {
+            "level": "ERROR",
+            "message": "Database optimization failed: Table lock timeout",
+            "rawLine": "2023-12-01 09:04:10 ERROR Database optimization failed: Table lock timeout",
+            "timestamp": "2023-12-01 09:04:10"
+        },
+        {
+            "level": "WARNING",
+            "message": "WARN Database optimization will retry during next maintenance window",
+            "rawLine": "2023-12-01 09:04:11 WARN Database optimization will retry during next maintenance window",
+            "timestamp": "2023-12-01 09:04:11"
+        }
+    ],
+    "levelCounts": {
+        "ERROR": {
+            "count": 7,
+            "percentage": 13.725490196078432
+        },
+        "INFO": {
+            "count": 34,
+            "percentage": 66.66666666666666
+        },
+        "WARNING": {
+            "count": 10,
+            "percentage": 19.607843137254903
+        }
+    },
+    "summary": {
+        "mostCommonLevel": "INFO",
+        "processingTimeMs": 13.0,
+        "totalLines": 51
+    }
+}

@@ -1,0 +1,1 @@
+/usr/bin/c++  -arch arm64 -Wl,-search_paths_first -Wl,-headerpad_max_install_names CMakeFiles/log_analyzer_live.dir/main_live.cpp.o -o log_analyzer_live  libLogAnalyzer.a

@@ -48,4 +48,6 @@
 2023-12-01 09:04:20 INFO Temporary files cleanup completed: 250MB freed
 2023-12-01 09:04:25 INFO Security scan completed: No vulnerabilities found
 2023-12-01 09:04:30 INFO Performance metrics collected and stored
-2023-12-01 09:05:00 INFO Application running smoothly - End of sample log 
+2023-12-01 09:05:00 INFO Application running smoothly - End of sample log 2024-01-01 15:39:51 ERROR: Test error message from live monitoring
+2024-01-01 15:42:38 ERROR: New test error for live monitoring
+2025-07-03 16:20:42 ERROR: 최종 테스트 에러 메시지

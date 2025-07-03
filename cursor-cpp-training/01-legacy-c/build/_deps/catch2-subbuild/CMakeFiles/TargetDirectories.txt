@@ -1,0 +1,3 @@
+/Users/ahnkwanki/src-github/cursorVDClaas2025/cursor-cpp-training/01-legacy-c/build/_deps/catch2-subbuild/CMakeFiles/catch2-populate.dir
+/Users/ahnkwanki/src-github/cursorVDClaas2025/cursor-cpp-training/01-legacy-c/build/_deps/catch2-subbuild/CMakeFiles/edit_cache.dir
+/Users/ahnkwanki/src-github/cursorVDClaas2025/cursor-cpp-training/01-legacy-c/build/_deps/catch2-subbuild/CMakeFiles/rebuild_cache.dir

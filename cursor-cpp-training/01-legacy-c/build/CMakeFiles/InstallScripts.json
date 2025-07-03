@@ -1,0 +1,9 @@
+{
+	"InstallScripts" : 
+	[
+		"/Users/ahnkwanki/src-github/cursorVDClaas2025/cursor-cpp-training/01-legacy-c/build/cmake_install.cmake",
+		"/Users/ahnkwanki/src-github/cursorVDClaas2025/cursor-cpp-training/01-legacy-c/build/_deps/catch2-build/cmake_install.cmake",
+		"/Users/ahnkwanki/src-github/cursorVDClaas2025/cursor-cpp-training/01-legacy-c/build/_deps/catch2-build/src/cmake_install.cmake"
+	],
+	"Parallel" : false
+}
